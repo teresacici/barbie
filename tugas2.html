@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 - Form dalam HTML</title>
+    <style>
+
+        /* Ini gunanya untuk reset css */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 35px;
+            background-color: #f3f3f3;
+            width: 100%;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #ff2190;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        form {
+            background-color: #ffffff;
+            border-radius: 7px;
+            padding: 18px; 
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow-x: auto;
+        }
+        
+        fieldset {
+            background: #ffe9f4;
+            border: 2px solid #ff2190;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            padding: 5px 10px 10px; /* Ini maksudnya padding: atas (5px), kanan-kiri (10px), bawah (10px) */
+        }
+
+        legend {
+            color: #ff2190;
+            font-weight: bold;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+        table tr {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .kiri {
+            display: inline-block;
+            width: 150px;
+            margin-right: 10px;
+            font-size: 15px;
+        }
+        .kanan {
+            display: inline-block;
+            margin-left: 10px;
+            height: 30px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid #ff2190;
+            padding: 0 5px;
+            font-size: 14px;
+            font-weight: lighter;
+            background-color: #ffffff;
+        }
+
+        .entah {
+            padding-left: 10px;
+            font-size: 14px;
+        }
+
+        .entah div {
+            display: block;
+            margin: 0 0 7px;
+        }
+
+        .entah label,
+        .entah input {
+            cursor: pointer;
+        }
+
+        .note {
+            font-size: 13px;
+            font-weight: lighter;
+            color: #bea710;
+        }
+
+        textarea {
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 5px;
+        }
+
+        .tempat_tombol {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .tempat_tombol input {
+            border: 2px solid #ff2190;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 0 10px;
+            padding: 8px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .kirim {
+            background-color: #ff2190;
+            color: white;
+        }
+        .kirim:hover {
+            background-color: #e61e84;
+        }
+
+        .reset {
+            background-color: #fff0f7;
+            color: #ff2190;
+        }
+
+        .reset:hover {
+            background-color: #ffdae6;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Peminatan UKM  Fasilkom-TI</h1>
+
+    <form action="" method="post">
+
+        <fieldset>
+            <legend>Akun</legend>
+            
+            <table>
+                <tr>
+                    <td><label class="kiri" for="username">Username</label></td>
+                    <td>:</td>
+                    <td><input class="kanan" type="text" id="username" name="username" required placeholder="Masukkan Username"></td>
+                </tr>
+                <tr>
+                    <td><label class="kiri" for="password">Password</label></td>
+                    <td>:</td>
+                    <td><input class="kanan" type="password" id="password" name="password" required placeholder="Masukkan Password"></td>
+                </tr>
+                <tr>
+                    <td><label class="kiri" for="password">Konfirmasi Password</label></td>
+                    <td>:</td>
+                    <td><input class="kanan" type="password" id="password" name="password" required placeholder="Masukkan Konfirmasi Password"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Biodata</legend>
+
+            <table>
+                <tr>
+                    <td><label class="kiri" for="nama">Nama Lengkap</label></td>
+                    <td>:</td>
+                    <td><input class="kanan" type="text" id="nama" name="nama" required placeholder="Masukkan Nama Lengkap"></td>
+                </tr>
+                <tr>
+                    <td><label class="kiri" for="nim">NIM</label></td>
+                    <td>:</td>
+                    <td><input class="kanan" type="text" id="nim" name="nim" required placeholder="251402001" pattern="[0-9]+" maxlength="10"></td>
+                </tr>
+                <tr>
+                    <td><label class="kiri" for="jk">Jenis Kelamin</label></td>
+                    <td>:</td>
+                    <td class="entah">
+                        <div>
+                            <input type="radio" id="laki" name="jk" value="Laki-laki" required>
+                            <label for="laki">Laki-laki</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="perempuan" name="jk" value="Perempuan">
+                            <label for="perempuan">Perempuan</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="kiri" for="tgl_lahir">Tanggal Lahir</label></td>
+                    <td>:</td>
+                    <td><input class="kanan" type="date" id="tgl_lahir" name="tgl_lahir" required></td>
+                </tr>
+                <tr>
+                    <td><label class="kiri" for="no_telp">No. Telepon</label></td>
+                    <td>:</td>
+                    <td><input class="kanan" type="tel" id="no_telp" name="no_telp" required placeholder="081234567890" pattern="[0-9]+" maxlength="15"></td>
+                </tr>
+                <tr>
+                    <td><label class="kiri" for="email">Email</label></td>
+                    <td>:</td>
+                    <td><input class="kanan" type="email" id="email" name="email" required placeholder="contoh@usu.ac.id"></td>
+                </tr>
+                <tr>
+                    <td><label class="kiri" for="prodi">Program Studi</label></td>
+                    <td>:</td>
+                    <td>
+                        <select class="kanan" id="prodi" name="prodi" required>
+                            <option value="" disabled selected>Pilih Program Studi</option>
+                            <option value="TI">Teknologi Informasi</option>
+                            <option value="SI">Ilmu Komputer</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="kiri" for="ukm">Pilihan UKM</label></td>
+                    <td>:</td>
+                    <td class="entah">
+                        <div>
+                            <input type="checkbox" id="aiesec" name="ukm" value="aiesec">
+                            <label for="aiesec">AIESEC</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="mepro" name="ukm" value="mepro">
+                            <label for="mepro">MEPRO</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="panahan" name="ukm" value="panahan">
+                            <label for="panahan">PANAHAN</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="catur" name="ukm" value="catur">
+                            <label for="catur">CATUR</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="karate" name="ukm" value="karate">
+                            <label for="karate">KARATE</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="taekwondo" name="ukm" value="taekwondo">
+                            <label for="taekwondo">TAEKWONDO</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="bolavoli" name="ukm" value="bolavoli">
+                            <label for="bolavoli">BOLA VOLI</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="lptq" name="ukm" value="lptq">
+                            <label for="lptq">LPTQ</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="psulos" name="ukm" value="psulos">
+                            <label for="psulos">PS ULOS</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="futsal" name="ukm" value="futsal">
+                            <label for="futsal">FUTSAL</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="badminton" name="ukm" value="badminton">
+                            <label for="badminton">BADMINTON</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="kompas" name="ukm" value="kompas">
+                            <label for="kompas">KOMPAS</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="inkubatorsains" name="ukm" value="inkubatorsains">
+                            <label for="inkubatorsains">INKUBATOR SAINS</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="menwa" name="ukm" value="menwa">
+                            <label for="menwa">MENWA</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="relawansahiva" name="ukm" value="relawansahiva">
+                            <label for="relawansahiva">RELAWAN SAHIVA</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sre" name="ukm" value="sre">
+                            <label for="sre">SRE</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sepaturoda" name="ukm" value="sepaturoda">
+                            <label for="sepaturoda">SEPATU RODA</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sepakbola" name="ukm" value="sepakbola">
+                            <label for="sepakbola">SEPAK BOLA</label>
+                        </div>
+                        <i class="note">Note: Silahkan pilih minimal satu UKM yang diminati</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="kiri" for="alasan">Alasan</label></td>
+                    <td>:</td>
+                    <td><textarea class="kanan" id="alasan" name="alasan" required placeholder="Alasan memilih UKM" style="height: 100px;"></textarea></td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        <span class="tempat_tombol">
+            <input class="kirim" type="submit" value="Submit">
+            <input class="reset" type="reset" value="Reset">
+        </span>
+
+    </form>
+
+</body>
+</html>
